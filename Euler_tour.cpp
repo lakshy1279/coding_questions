@@ -20,10 +20,11 @@ void dfs(int src,int lev=0)
         if(!vis[it])
         {
             dfs(it,lev+1);
+             eulerTour.push_back(src);
         }
     }
   //exit of the Euler Tour
-    eulerTour.push_back(src);
+   
 }
   public:
 vector<int> solve(int N, int Q, vector<vector<int> > &Edge,vector<vector<int> > &query) {
