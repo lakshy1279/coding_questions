@@ -1,0 +1,54 @@
+void printLeft(Node* root)
+    {
+        if(root==NULL)
+         return;
+         if(root->left)
+         {
+         cout<<root->data<<" ";
+         printLeft(root->left);
+         }
+         else if(root->right)
+         {
+             cout<<root->data<<" ";
+             printLeft(root->right);
+         }
+    }
+    void printLeaves(Node* root)
+    {
+        if(root==NULL)
+         return;
+        
+        printLeaves(root->left);
+        if(root->left==NULL&&root->right==NULL)
+        {
+         cout<<root->data<<" ";
+        }
+        printLeaves(root->right);
+    }
+    void printRight(Node* root)
+    {
+        if(root==NULL)
+        return;
+        if(root->right)
+        {
+         printRight(root->right);
+         cout<<root->data<<" ";
+        }
+        else if(root->left)
+        {
+            printRight(root->left);
+            cout<<root->data<<" ";
+        }
+    }
+    vector <int> boundary(Node *root)
+    {
+        vector<int>ans;
+        if(root==NULL)
+        return ans;
+        cout<<root->data<<" ";
+        printLeft(root->left);
+        printLeaves(root->left);
+        printLeaves(root->right);
+        printRight(root->right);
+        return ans;
+    }
