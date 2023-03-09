@@ -1,7 +1,8 @@
 class Solution {
 public:
     // in this we start from the end and we assume that the element we pick is the last ballon that need to burst in the range i to j and calling recursion 
-    // on sub cases 
+    // on sub cases
+    // we assume that the element we pick is the last element because if we assume it as the first element then how we maintain the index of the prev and the next element.
     // recusion follow top-down approach and tabulation follow bottom up approach that's why we start i from n and j from 1
     // int helper(vector<int>& nums,int i,int j,vector<vector<int>> &dp)
     // {
