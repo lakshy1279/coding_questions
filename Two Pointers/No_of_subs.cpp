@@ -4,6 +4,7 @@
 
 
 // one can think of dp so always think properly.
+// DP won't work here, the subproblem's max and mini are different for every subproblem when you consider subproblem till an index.
 
 
  int getEle(vector<int>& nums, int ele, int l)
