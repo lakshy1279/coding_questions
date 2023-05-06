@@ -3,6 +3,9 @@
 // Return the number of non-empty subsequences of nums such that the sum of the minimum and maximum element on it is less or equal to target. Since the answer may be too large, return it modulo 109 + 7.
 
 
+// one can think of dp so always think properly.
+
+
  int getEle(vector<int>& nums, int ele, int l)
     {
         int r = nums.size() - 1;
