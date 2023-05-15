@@ -95,6 +95,8 @@ vector<pair<int, pair<int, int>>> findMinIngredients(vector<pair<int, pair<int, 
 
     dp[0][0][0] = 0;
 
+
+   // suppose we need to find target to be 10 -> then either we do 2,7,1 or 1,2,7 or 7,2,1 .. all will give same result.
     for (int i = 0; i < k; i++) {
         for (int p = target_protein; p >= ingredients[i].first; p--) {
             for (int f = target_fat; f >= ingredients[i].second.first; f--) {
