@@ -16,7 +16,14 @@ public:
             return 0;
         if(dp[i][j][k]>0)
             return dp[i][j][k];
+        while(i + 1 <= j && boxes[i] == boxes[i + 1])
+        {
+            i++;
+            k++;
+        }
+        // this give the ans for the case when we only remove continous ele like for ex if we have 1,3,3,4,3,1 then first we remove 1 then 3,3 then 4 ....
         int res=(k+1)*(k+1)+highestvalue(boxes,i+1,j,0,dp);
+        // this covers the case when we merge the the equal no like 1,3,3,4,3,1 in this first i remove 4 then all three and then 1.
         for(int m=i+1;m<=j;m++)
         {
             if(boxes[i]==boxes[m])
