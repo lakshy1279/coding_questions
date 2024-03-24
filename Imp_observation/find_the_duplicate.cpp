@@ -9,6 +9,8 @@
 
 
 // Binary Search Solution
+// T.C -> O(nlogn);
+// S.C -> O(1)
 
 class Solution {
 public:
@@ -36,3 +38,32 @@ public:
         return ans;
     }
 };
+
+
+
+// T.C -> O(n)
+// S.C -> O(1)
+// using haire and tortoise method
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        if(nums.length > 1)
+        {
+            int slow = nums[0];
+            int fast = nums[slow];
+            while(slow != fast)
+            {
+                slow = nums[slow];
+                fast = nums[nums[fast]];
+            }
+            slow = 0;
+            while(fast != slow)
+            {
+                fast = nums[fast];
+                slow = nums[slow];
+            }
+            return slow;
+        }
+        return -1;
+    }
+}
